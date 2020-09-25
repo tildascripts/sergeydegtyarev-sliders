@@ -1,0 +1,239 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style type="text/css">
+	@media screen and (max-width: 479px) {
+		.slick-next.slick-arrow {
+			right: -40px!important;
+		}
+		.slick-prev.slick-arrow {
+			left: -40px!important;
+		}
+	}
+
+	.custom-slider1 * {
+		box-sizing: border-box;
+		outline: none!important;
+	}
+	.custom-slider1 {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 0 20px!important;
+		width: 240px;
+		outline: none;
+		display: block;
+	}
+	@media screen and (max-width: 479px) {
+		.custom-slider1 {
+			padding: 0 8px!important;
+		}
+	}
+	.custom-slider1-img {
+		position: relative;
+		margin-bottom: 28px;
+		width: 100%;
+		background-color: lightgray;
+	}
+	.custom-slider1-title {
+		color: #ffffff;
+		font-size: 22px;
+		font-family: "TTNorms", Arial, sans-serif;
+		line-height: 1.7;
+		font-weight: 500;
+		margin-bottom: 16px;
+	}
+	.custom-slider1-subtitle {
+		color: #c2c2c2;
+		font-size: 16px;
+		font-family: "TTNorms", Arial, sans-serif;
+		line-height: 1.7;
+		font-weight: 100;
+	}
+
+
+	.custom-slider2 * {
+		box-sizing: border-box;
+		outline: none!important;
+	}
+	@media screen and (max-width: 479px) {
+		.custom-slider2 {
+			padding: 0 8px!important;
+		}
+	}
+	.custom-slider2 {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 0 20px!important;
+		width: 240px;
+		outline: none;
+		display: block;
+	}
+	.custom-slider2-img {
+		position: relative;
+		width: 100%;
+		margin-bottom: 28px;
+		background-color: lightgray;
+	}
+	.custom-slider2-title {
+		color: #c2c2c2;
+		font-size: 16px;
+		font-family: 'TTNorms',Arial,sans-serif;
+		line-height: 1.7;
+		font-weight: 100;
+	}
+</style>
+
+<script>
+$(document).ready(() => {
+	//slider 1
+	(() => {
+		let root = document.querySelector("[data-elem-id='1601039024604']")
+		root.innerHTML = ""
+		let slides = [
+			{
+				img: `https://static.tildacdn.com/tild3463-6232-4830-b363-326133393230/-1.jpg`,
+				title: "Бизнес по франшизе",
+				subtitle: "Онлайн-курс по запуску бизнеса",
+				url: "https://sbs.edu.ru/lp/degtyarev/franshiza/"
+			},
+			{
+				img: `https://static.tildacdn.com/tild3832-3133-4633-a665-643237343630/2.jpg`,
+				title: "Книга \"Бизнес по франшизе\"",
+				subtitle: "Издательство Синергия, выход: декабрь 2020 г.",
+				url: "https://sbs.edu.ru/lp/degtyarev/franshiza/"
+			},
+			{
+				img: `https://static.tildacdn.com/tild6432-6233-4233-a134-656539623163/photo.jpg`,
+				title: "Книга \"Как создать франшизу 1 в своем рынке\"",
+				subtitle: "Издательство ЭКСМО, выход: ноябрь 2020 г.",
+				url: "https://sbs.edu.ru/lp/degtyarev/franshiza/"
+			},
+		]
+
+		slides.forEach(slide => {
+			let slideEl = document.createElement("a")
+			slideEl.setAttribute("href", slide.url)
+			slideEl.classList.add("custom-slider1")
+
+			let img = document.createElement("img")
+			img.classList.add("custom-slider1-img")
+			img.src = slide.img
+			slideEl.appendChild(img)
+
+			let title = document.createElement("div")
+			title.classList.add("custom-slider1-title")
+			title.innerHTML = slide.title
+			slideEl.appendChild(title)
+
+			let subtitle = document.createElement("div")
+			subtitle.classList.add("custom-slider1-subtitle")
+			subtitle.innerHTML = slide.subtitle
+			slideEl.appendChild(subtitle)
+
+		    root.appendChild(slideEl)
+		})
+
+		$(root).slick({
+			arrows: true,
+			dots: false,
+			infinite: true,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			responsive: [
+				{
+					breakpoint: 479,
+					settings: {
+						slidesToShow: 1,
+					}
+   				},
+   			]
+		})
+	})();
+
+
+	//slider 2
+	(() => {
+		let root = document.querySelector("[data-elem-id='1601039788408']")
+		root.innerHTML = ""
+		let slides = [
+			{
+				img: `https://static.tildacdn.com/tild3335-3437-4162-a565-336633303038/_.jpg`,
+				title: "Он вам не бизнес-тренер. Зачем стартаперам ментор и как с ним правильно работать.",
+				url: "https://secretmag.ru/selfie/on-vam-ne-biznes-trener-zachem-startaperam-mentor-i-kak-s-nim-pravilno-rabotat.htm"
+			},
+			{
+				img: `https://static.tildacdn.com/tild3066-3335-4136-b939-303433643637/Executive.jpg`,
+				title: "5 главных страхов делегирования и методы борьбы с ними.",
+				url: "https://www.e-xecutive.ru/management/biznes-liderstvo/1991578-5-glavnyh-strahov-delegirovaniya-i-metody-borby-s-nimi"
+			},
+			{
+				img: `https://static.tildacdn.com/tild3130-3138-4764-a336-333433663865/vcru.jpg`,
+				title: "Как найти инвестора для открытия бизнеса.",
+				url: "https://vc.ru/finance/103404-kak-nayti-investora-dlya-otkrytiya-biznesa"
+			},
+			{
+				img: `https://static.tildacdn.com/tild6437-6638-4230-b330-363634623934/photo.jpg`,
+				title: "Как открыть франшизу: пошаговая инструкция.",
+				url: "https://fintolk.pro/kak-otkryt-franshizu-poshagovaja-instrukcija/"
+			},
+			{
+				img: `https://static.tildacdn.com/tild3362-6532-4332-b036-366630613739/photo.jpg`,
+				title: "Что ждет рынок франчайзинга после пандемии.",
+				url: "https://strategyjournal.ru/partners-news/chto-zhdet-rynok-franchajzinga-posle-pandemii/"
+			},
+			{
+				img: `https://static.tildacdn.com/tild3733-6330-4635-a438-616432303565/photo.jpg`,
+				title: "Как выбрать франшизу.",
+				url: "https://b2blog.beeline.ru/kak-vyabrat-franshizu/"
+			},
+			{
+				img: `https://static.tildacdn.com/tild3461-3737-4236-a338-376163366230/photo.jpg`,
+				title: "Двенадцать правил успешной франшизы.",
+				url: "https://retail-loyalty.org/news/dvenadtsat-pravil-uspeshnoy-franshizy-rekomendatsii-dlya-franchayzerov-i-ikh-partnerov/"
+			},
+			{
+				img: `https://static.tildacdn.com/tild3264-3162-4763-b836-663666303965/NR.jpg`,
+				title: "Коронакризис франчайзинга: корни проблем и их решение.",
+				url: "https://new-retail.ru/business/koronakrizis_franchayzinga_korni_problem_i_ikh_reshenie1858/"
+			},
+		]
+		
+		slides.forEach(slide => {
+			let slideEl = document.createElement("a")
+			slideEl.setAttribute("href", slide.url)
+			slideEl.classList.add("custom-slider2")
+
+			let img = document.createElement("img")
+			img.classList.add("custom-slider2-img")
+			img.src = slide.img
+			slideEl.appendChild(img)
+
+			let title = document.createElement("div")
+			title.classList.add("custom-slider2-title")
+			title.innerHTML = slide.title
+			slideEl.appendChild(title)
+
+		    root.appendChild(slideEl)
+		})
+
+		$(root).slick({
+			arrows: true,
+			dots: false,
+			infinite: true,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			responsive: [
+				{
+					breakpoint: 479,
+					settings: {
+						slidesToShow: 1,
+					}
+   				},
+   			]
+		})
+	})();
+})
+</script>
